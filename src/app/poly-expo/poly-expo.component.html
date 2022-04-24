@@ -1,0 +1,27 @@
+<main>
+    <div class="back"></div>
+    <h2>Regular Polygon</h2>
+    <div>
+        <form #form="ngForm">         
+            <label for=""><h3>Centre X:</h3>
+                <input type="number" name="cx" required ngModel>
+            </label>
+            <label for=""><h3>Centre Y:</h3>
+                <input type="number" name="cy" required ngModel>
+            </label>
+            <label for=""><h3>Radius:</h3>
+                <input type="number" name="r" required ngModel>
+            </label>
+            <label for=""><h3>Faces:</h3>
+                <input type="number" name="s" min="3" required ngModel>
+            </label>
+            <label for=""><h3>Initial Radians:</h3>
+                <input type="number" name="a" required ngModel>
+            </label>
+            <svg (click)="form.valid?display(form.form):null" [errata]="form.form" class="submit" xmlns="http://www.w3.org/2000/svg" fill="rgb(65, 25,108)" width="36" height="36" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+        </form>
+        <canvas #canvas1>
+
+        </canvas>
+    </div>
+</main>

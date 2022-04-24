@@ -1,0 +1,27 @@
+<main>
+    <div class="back"></div>
+    <h2>Line Group Path</h2>
+    <div>
+        <form #form="ngForm">
+            <section>
+                <svg (click)="points= points>2?points-1:points" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M0 10h24v4h-24z" />
+                </svg>
+                <svg (click)="points= form.valid?points+1:points" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
+                </svg>
+            </section>
+            <h2>Points</h2>
+            <label>
+                <span *ngFor="let i of _points(); let key = index">
+                    <input type="number" [name]="key.toString() + 'x'" placeholder="x" required ngModel>
+                    <input type="number" [name]="key.toString() + 'y'" placeholder="y" required ngModel>
+                </span>
+            </label>
+            <svg (click)="form.valid?display(form.form):null" [errata]="form.form" class="submit" xmlns="http://www.w3.org/2000/svg" fill="rgb(65, 25,108)" width="36" height="36" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+        </form>
+        <canvas #canvas1>
+
+        </canvas>
+    </div>
+</main>
